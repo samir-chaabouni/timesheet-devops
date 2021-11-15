@@ -41,7 +41,7 @@ public class UserServiceImplTest {
 	public void testupdateUser() throws ParseException {
 		SimpleDateFormat dataformat = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = dataformat.parse("2000-01-01");
-		User user = new User("med","med",date,Role.INGENIEUR);
+		User user = new User(1l,"med","med",date,Role.INGENIEUR);
 		User userupdate = us.updateUser(user);
 		Assertions.assertEquals(user.getLastName(), userupdate.getLastName());
 	}
@@ -50,7 +50,7 @@ public class UserServiceImplTest {
 	@Order(4)
 	public void testretrieveUser(){
 		User retrieveUser= us.retrieveUser("1");
-		Assertions.assertEquals(4l, retrieveUser.getId().longValue());
+		Assertions.assertEquals(1l, retrieveUser.getId().longValue());
 	}
 	
 	@Test
