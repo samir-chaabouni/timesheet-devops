@@ -32,10 +32,10 @@ public class EmployeServiceImpl implements IEmployeService {
 	}
 
 	@Override
-	public void deleteEmploye(int id) {
+	public void deleteEmploye(String id) {
 		// Log en début de la méthode 
 		l.info("In deleteEmploye()");
-		employeRepository.deleteById((long) id);
+		employeRepository.deleteById(Long.parseLong(id));
 		l.info("Out deleteEmploye()");
 	}
 
@@ -50,14 +50,15 @@ public class EmployeServiceImpl implements IEmployeService {
 	}
 
 	@Override
-	public Employe retriveEmploye(int id) {
+	public Employe retriveEmploye(String id) {
 	//  Log en début de la méthode 
 			l.info("In retrieveUser()");
 			Employe employe = null;
 			try{
 				l.info("In retriveEmploye() :");
-				employe = employeRepository.findById((long) id).get();
-				l.info("out of retriveEmploye() :");
+				employe = employeRepository.findById(Long.parseLong(id)).get();
+				l.info(employe);
+				l.info("out of retriveEmploye(() :");
 			}catch(Exception e){
 				l.error("Error in retriveEmploye() :"+e);
 			}

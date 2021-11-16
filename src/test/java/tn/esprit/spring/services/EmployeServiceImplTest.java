@@ -36,20 +36,20 @@ public class EmployeServiceImplTest {
 	@Test
 	@Order(3)
 	public void testupdateEmploye(){
-		Employe employe = new Employe(1,"med","med","med@med.com","1234",true,Role.INGENIEUR);
+		Employe employe = new Employe(1l,"med","med","med@med.com","1234",true,Role.INGENIEUR);
 		Employe employeadd =es.updateEmploye(employe);
 		Assertions.assertEquals(employe.getEmail(),employeadd.getEmail());
 	}
 	@Test
 	@Order(4)
 	public void testretriveEmploye(){
-		Employe getemploye =es.retriveEmploye(1);
-		Assertions.assertEquals(1,getemploye.getId());
+		Employe getemploye =es.retriveEmploye("1");
+		Assertions.assertEquals(1l,getemploye.getId().longValue());
 	}
 	@Test
-	@Order(4)
+	@Order(5)
 	public void testdeleteEmploye(){
-		es.deleteEmploye(1);
-		Assertions.assertNull(es.retriveEmploye(1));
+		es.deleteEmploye("1");
+		Assertions.assertNull(es.retriveEmploye("1"));
 	}
 }

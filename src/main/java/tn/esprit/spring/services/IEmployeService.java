@@ -7,8 +7,8 @@ import tn.esprit.spring.entities.Employe;
 public interface IEmployeService {
 	List<Employe> getallEmploye();
 	Employe addEmploye(Employe e);
-	void deleteEmploye(int id);
+	void deleteEmploye(String id);
 	Employe updateEmploye(Employe e);
-	Employe retriveEmploye(int i);
+	Employe retriveEmploye(String id);
 
 }
